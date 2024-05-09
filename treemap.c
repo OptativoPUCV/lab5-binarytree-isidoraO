@@ -96,7 +96,12 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
-  if(is_equal(tree, tree->root->pair->key, key)) return tree->root->pair;
+  if(is_equal(tree, tree->root->pair->key, key))
+  {
+    tree->current = tree->root;
+    return tree->root->pair;
+  }
+  
   TreeNode *aux = tree->root;
   while((aux != NULL) && (!is_equal(tree, aux->pair->key, key)))
     {
