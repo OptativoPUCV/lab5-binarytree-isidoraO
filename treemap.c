@@ -96,7 +96,6 @@ void removeNode(TreeMap * tree, TreeNode* node)
     else
       node->parent->right = NULL;
     node->parent = NULL;
-    node = NULL;
     free(node);
   }
   //caso 2: el nodo tiene un hijo.
