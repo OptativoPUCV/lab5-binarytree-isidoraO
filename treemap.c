@@ -101,7 +101,22 @@ void removeNode(TreeMap * tree, TreeNode* node)
   }
   //caso 2: el nodo tiene un hijo.
   else if(node->right == NULL || node->left == NULL)
-    printf("Hello");
+  {
+    TreeNode *aux_child;
+    if(node->left != NULL)
+      aux_child = node->left;
+    else
+      aux_child = node->right;
+
+    if(node->parent->left == node)
+      node->parent->left = aux_child;
+    else
+      node->parent->left = aux_child;
+    aux_child = node->parent;
+    node = NULL;
+    free(node);
+      
+  }
   //caso 3: el nodo toene dos hijos.
 }
 
