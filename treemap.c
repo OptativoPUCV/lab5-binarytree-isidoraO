@@ -105,7 +105,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         aux = aux->right;
     }
   tree->current = aux;
-  return aux->pair;
+  return tree->current->pair;
 }
 
 
