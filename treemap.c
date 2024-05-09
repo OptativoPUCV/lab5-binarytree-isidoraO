@@ -110,9 +110,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         aux = aux->left;
       else
         aux = aux->right;
+
+      if(is_equal(tree, key, aux->pair->key)) break;
     }
-  if(aux != NULL)
-    tree->current = aux;
+  tree->current = aux;
   return aux->pair;
 }
 
