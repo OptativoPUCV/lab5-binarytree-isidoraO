@@ -111,7 +111,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       else
         aux = aux->right;
     }
-  tree->current = aux;
+  if(aux != NULL)
+    tree->current = aux;
   return aux->pair;
 }
 
