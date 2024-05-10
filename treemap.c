@@ -118,9 +118,9 @@ void removeNode(TreeMap * tree, TreeNode* node)
   //caso 3: el nodo tiene dos hijos.
   else
   {
-    TreeNode *aux = node->right;
-    while((aux->left != NULL) && (!is_equal(tree, aux->pair->key, node->pair->key)))
-        aux = aux->left;
+    TreeNode *aux = node->left;
+    while((aux->right != NULL) && (!is_equal(tree, aux->pair->key, node->pair->key)))
+        aux = aux->right;
     node->pair = aux->pair;
     removeNode(tree, aux);
   }
