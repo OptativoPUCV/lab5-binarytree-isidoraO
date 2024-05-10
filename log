@@ -859,3 +859,8 @@ treemap.c:176:19: error: ‘aux_upper’ may be used uninitialized in this funct
 cc1: all warnings being treated as errors
 Compilation failed
 ecb5cad
+Fri 10 May 2024 10:39:06 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+d1235a8
