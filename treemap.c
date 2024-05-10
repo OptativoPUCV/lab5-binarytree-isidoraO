@@ -162,9 +162,11 @@ Pair * upperBound(TreeMap * tree, void* key)
 {
   TreeNode *aux = tree->root;
   if(aux != NULL|| tree == NULL) return NULL;
+  
   TreeNode *aux_upper = aux;
   while(aux != NULL)
     {
+      printf("Hello");
       if(tree->lower_than(key, aux->pair->key))
         aux = aux->left;
       else
