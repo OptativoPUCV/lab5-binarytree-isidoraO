@@ -183,7 +183,8 @@ Pair * nextTreeMap(TreeMap * tree)
       while (aux->parent && aux == aux->parent->right) {
         aux = aux->parent;
       }
-      aux = aux->parent;
+      if(aux)
+        aux = aux->parent;
     }
     tree->current = aux;
     return aux->pair;
