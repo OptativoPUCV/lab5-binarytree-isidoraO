@@ -172,7 +172,7 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-  Tf (tree == NULL || tree->root == NULL) // Check if tree or root is NULL
+  if(tree == NULL || tree->root == NULL) // Check if tree or root is NULL
     return NULL;
 
   TreeNode *aux = tree->current;
