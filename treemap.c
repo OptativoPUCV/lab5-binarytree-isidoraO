@@ -161,6 +161,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 Pair * upperBound(TreeMap * tree, void* key) 
 {
   TreeNode *aux = tree->root;
+  printf("Hello");
   if(aux != NULL|| tree == NULL) return NULL;
   
   TreeNode *aux_upper = aux;
