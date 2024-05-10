@@ -161,14 +161,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 Pair * upperBound(TreeMap * tree, void* key) 
 {
   TreeNode *aux = tree->root;
-  printf("Hellos");
   if(aux == NULL || tree == NULL) return NULL;
   
   TreeNode *aux_upper = aux;
   while((aux != NULL) && (!is_equal(tree, key, aux->pair->key)))
     {
-      if(is_equal(tree, key, aux->pair->key) || tree->lower_than(key, aux->pair->key))
-        aux_upper = aux->pair->key;
       if(tree->lower_than(key, aux->pair->key))
         aux = aux->left;
       else
