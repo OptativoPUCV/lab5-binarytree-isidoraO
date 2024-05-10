@@ -180,7 +180,7 @@ Pair * nextTreeMap(TreeMap * tree)
         aux = aux->left;
       }
     } else {
-      while (aux->parent && aux == aux->parent->right) {
+      while (aux->parent && tree->lower_than(aux->pair->key, aux->parent->pair->key)){
         aux = aux->parent;
       }
       if(aux)
