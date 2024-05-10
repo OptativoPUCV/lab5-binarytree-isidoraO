@@ -119,7 +119,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
   else
   {
     TreeNode *aux = node->left;
-    while(aux->right != NULL && !is_equal(tree, aux->pair->key, node->pair->key))
+    while((aux->right != NULL) && (!is_equal(tree, aux->pair->key, node->pair->key)))
       {
         aux = aux->right;
         printf("%s ", (char *)aux->pair->key);
