@@ -173,7 +173,6 @@ Pair * firstTreeMap(TreeMap * tree)
 Pair * nextTreeMap(TreeMap * tree) 
 {
   TreeNode *aux = tree->current;
-  tree->current = aux;
   if(aux->right != NULL)
   {
     aux = aux->right;
@@ -185,5 +184,6 @@ Pair * nextTreeMap(TreeMap * tree)
     while(aux != NULL  && tree->lower_than(aux->pair->key, aux->parent->pair->key))
        aux = aux->parent;
   }
+  tree->current = aux;
   return aux->pair;
 }
