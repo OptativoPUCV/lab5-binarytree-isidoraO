@@ -178,6 +178,7 @@ Pair * nextTreeMap(TreeMap * tree)
     aux = aux->right;
     while(aux->left != NULL)
       aux = aux->left;
+    printf("%i ", *(int *)aux->pair->key);
   }
   else
   {
