@@ -164,11 +164,11 @@ Pair * upperBound(TreeMap * tree, void* key)
   if(aux == NULL || tree == NULL) return NULL;
   
   TreeNode *aux_upper = aux;
-  while((aux != NULL) && (!is_equal(tree, key, aux->pair->key)))
+  while(aux != NULL)
     {
       if(is_equal(tree, key, aux->pair->key))
         aux_upper = aux;
-      else if(tree->lower_than(key, aux->pair->key))
+      if(tree->lower_than(key, aux->pair->key))
       {
         aux_upper = aux;
         aux = aux->left;  
