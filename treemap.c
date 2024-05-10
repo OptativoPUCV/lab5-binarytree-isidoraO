@@ -162,7 +162,7 @@ Pair * upperBound(TreeMap * tree, void* key)
 {
   TreeNode *aux = tree->root;
   printf("Hellos");
-  if(aux != NULL|| tree == NULL) return NULL;
+  if(aux != NULL ) return NULL;
   
   TreeNode *aux_upper = aux;
   while(aux != NULL)
