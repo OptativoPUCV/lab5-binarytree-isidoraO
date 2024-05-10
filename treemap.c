@@ -173,6 +173,7 @@ Pair * firstTreeMap(TreeMap * tree)
 Pair * nextTreeMap(TreeMap * tree) 
 {
   TreeNode *aux = tree->current;
+  printf("%i ", *(int*) aux->pair->key);
   if(aux->right != NULL)
   {
     aux = aux->right;
