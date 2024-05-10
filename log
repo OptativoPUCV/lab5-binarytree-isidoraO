@@ -728,3 +728,20 @@ Fri 10 May 2024 10:12:09 PM UTC:
  tests:  23|2
 total_score: 50/70
 1386b93
+Fri 10 May 2024 10:13:12 PM UTC: 
+ treemap.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:175:3: error: implicit declaration of function ‘Tf’ [-Werror=implicit-function-declaration]
+  175 |   Tf (tree == NULL || tree->root == NULL) // Check if tree or root is NULL
+      |   ^~
+treemap.c:175:42: error: expected ‘;’ before ‘return’
+  175 |   Tf (tree == NULL || tree->root == NULL) // Check if tree or root is NULL
+      |                                          ^
+      |                                          ;
+  176 |     return NULL;
+      |     ~~~~~~                                
+cc1: all warnings being treated as errors
+Compilation failed
+8dde480
