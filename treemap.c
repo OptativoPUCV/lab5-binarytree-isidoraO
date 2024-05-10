@@ -181,10 +181,13 @@ Pair * nextTreeMap(TreeMap * tree)
   }
   else
   {
-    while(aux->parent != NULL && !tree->lower_than(aux->parent->pair->key, aux->pair->key))
+    while(aux->parent != NULL)
       {
         aux = aux->parent;
-        printf("%i", *(int *)aux->pair->key);
+        if(tree->lower_than(aux->parent->pair->key, aux->pair->key))
+        {
+           printf("%i", *(int *)aux->pair->key);
+        }
       }
 
   }
