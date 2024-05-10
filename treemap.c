@@ -170,6 +170,15 @@ Pair * firstTreeMap(TreeMap * tree)
   return aux->pair;
 }
 
-Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+Pair * nextTreeMap(TreeMap * tree) 
+{
+  TreeNode *aux = tree->current;
+  if(aux->right != NULL)
+  {
+    aux = aux->right;
+    while(aux->left != NULL)
+      aux = aux->left;
+  }
+  
+  return aux->pair;
 }
