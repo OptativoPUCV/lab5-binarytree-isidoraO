@@ -189,6 +189,7 @@ Pair * nextTreeMap(TreeMap * tree)
       printf("%i ", *(int *) aux->pair->key);
     }
   }
+  tree->current = aux;
   printf("%i ", *(int*)aux->pair->key);
   return aux->pair;
 }
