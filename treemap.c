@@ -181,7 +181,7 @@ Pair * nextTreeMap(TreeMap * tree)
   }
   else
   {    
-    while(aux->parent != NULL  && is_equal(tree,aux->parent->right->pair->key,aux->pair->key))
+    while(aux->parent != NULL  && aux->parent->right == aux)
       {
         aux = aux->parent;
         printf("%i ", *(int*) aux->pair->key);
