@@ -180,14 +180,9 @@ Pair * nextTreeMap(TreeMap * tree)
       aux = aux->left;
   }
   else
-  {
-    if(aux->parent != NULL)
-    {
-      while(aux != NULL  && tree->lower_than(aux->pair->key, aux->parent->pair->key))
-         aux = aux->parent;
-    }
-    else
-      return NULL;
+  {    
+    while(aux != NULL  && tree->lower_than(aux->pair->key, aux->parent->pair->key))
+      aux = aux->parent;
   }
   printf("%i ", *(int*)aux->pair->key);
   tree->current = aux;
