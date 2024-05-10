@@ -115,8 +115,15 @@ void removeNode(TreeMap * tree, TreeNode* node)
     free(node);
       
   }
-  //caso 3: el nodo toene dos hijos.
-
+  //caso 3: el nodo tiene dos hijos.
+  else
+  {
+    TreeNode *aux = node->left;
+    while(aux->right != NULL)
+        aux = aux->right;
+    node = aux;
+    
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
