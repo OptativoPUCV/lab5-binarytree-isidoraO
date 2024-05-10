@@ -73,6 +73,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
   
   new_node->parent = parent;
   tree->current = new_node;
+  free(new_node);
+  free(aux);
+  free(parent);
 }
 
 TreeNode * minimum(TreeNode * x)
@@ -113,9 +116,14 @@ void removeNode(TreeMap * tree, TreeNode* node)
       node->parent->right = aux_child;
     aux_child->parent = node->parent;
     free(node);
+    free(aux_child);
       
   }
   //caso 3: el nodo toene dos hijos.
+  else
+  {
+    TreeNode *aux;
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
