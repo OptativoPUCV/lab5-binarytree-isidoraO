@@ -186,6 +186,7 @@ Pair * nextTreeMap(TreeMap * tree)
     TreeNode *aux_parent = aux->parent;
     while(aux_parent->parent != NULL && aux_parent->right == aux)
         aux_parent = aux_parent->parent;  
+    aux = aux_parent;
   }
   return aux->pair;
 }
