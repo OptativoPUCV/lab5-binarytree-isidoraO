@@ -138,7 +138,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
   TreeNode *aux = tree->root;
-  if(aux == NULL) return NULL;
+  if(aux == NULL || tree == NULL) return NULL;
 
   while((aux != NULL) && (!is_equal(tree, key, aux->pair->key)))
   {
@@ -165,9 +165,8 @@ Pair * upperBound(TreeMap * tree, void* key)
   if(aux == NULL || tree == NULL) return NULL;
   
   TreeNode *aux_upper = aux;
-  while(aux != NULL)
+  while((aux != NULL) && (!is_equal(tree, key, aux->pair->key))
     {
-      printf("Hello");
       if(is_equal(tree, key, aux->pair->key) || tree->lower_than(key, aux->pair->key))
         aux_upper = aux->pair->key;
       if(tree->lower_than(key, aux->pair->key))
