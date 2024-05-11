@@ -205,8 +205,12 @@ Pair * nextTreeMap(TreeMap * tree)
   }
   else
   {
-    while(aux->parent != NULL  && tree->lower_than(aux->pair->key, aux->parent->pair->key))
-      aux = aux->parent;
+    while(aux->parent != NULL)
+      {
+        if(tree->lower_than(aux->pair->key, aux->parent->pair->key))
+          return aux->pair;
+        aux = aux->parent;
+      }
     return NULL;
   }
   if(aux != NULL) 
