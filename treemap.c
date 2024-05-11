@@ -163,9 +163,10 @@ Pair * upperBound(TreeMap * tree, void* key)
   TreeNode *aux = tree->root;
   if(aux == NULL || tree == NULL) return NULL;
   
-  Pair *aux_upper =  searchTreeMap(tree, key);
+  Pair *aux_upper = searchTreeMap(tree, key);
   if(aux_upper == NULL)
   {
+    printf("%i ", *(int*)tree->current->pair->key);
     aux_upper = nextTreeMap(tree);
   }
   return aux_upper;
