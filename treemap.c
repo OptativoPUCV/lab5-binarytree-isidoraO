@@ -211,12 +211,11 @@ Pair * nextTreeMap(TreeMap * tree)
         temp_aux = aux;
         aux = aux->parent;
       }
-    if(aux != NULL) 
-    {
-      tree->current = aux;
-      return aux->pair;
-    }
-
+  }
+  if(aux != NULL) 
+  {
+    tree->current = aux;
+    return aux->pair;
   }
   return NULL;
 }
