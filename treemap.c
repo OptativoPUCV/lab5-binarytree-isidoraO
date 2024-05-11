@@ -205,6 +205,7 @@ Pair * nextTreeMap(TreeMap * tree)
       {
         if(tree->lower_than(aux->parent->pair->key,aux->pair->key))
         {
+          printf("%i ", *(int*)aux->pair->key)
           tree->current = aux;
           return aux->pair;
         }
