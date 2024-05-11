@@ -199,9 +199,7 @@ Pair * nextTreeMap(TreeMap * tree)
   TreeNode *aux = tree->current;
   if(aux->right != NULL)
   {
-    aux = aux->right;
-    while(aux->left != NULL)
-      aux = aux->left;
+    aux = minimum(aux->right);
   }
   else
   {    
