@@ -163,12 +163,16 @@ Pair * upperBound(TreeMap * tree, void* key)
   if(tree == NULL) return NULL;
   
   Pair *aux_upper = searchTreeMap(tree, key);
-  TreeNode *aux = tree->current;
+  Pair *aux = tree->current->pair;
   
   if(aux_upper == NULL)
   {
-    if(tree->lower_than(key, aux->pair->key))
-      aux_upper = aux->pair;
+    while(aux != NULL)
+      {
+        if(tree->lower_than(key, aux->key))
+          aux_upper = aux;
+        aux = nextTreeMap(tree);
+      }
   }
   return aux_upper;
 }
