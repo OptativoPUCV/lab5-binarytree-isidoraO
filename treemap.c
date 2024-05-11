@@ -201,10 +201,12 @@ Pair * nextTreeMap(TreeMap * tree)
     aux = minimum(aux->right);
   else
   {    
+    TreeNode *temp_aux = aux;
     while(aux->parent != NULL)
       {
+        temp_aux = aux;
         aux = aux->parent;
-        if(aux->parent->left == aux)
+        if(aux->left == temp_aux)
         {
           printf("%i ", *(int*)aux->pair->key);
           tree->current = aux;
