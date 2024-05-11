@@ -202,10 +202,14 @@ Pair * nextTreeMap(TreeMap * tree)
   else
   {    
     while(aux->parent != NULL)
-      {if(tree->lower_than(aux->parent->pair->key,aux->pair->key))
-        printf("%i ", *(int*) aux->pair->key);
+      {
+        if(tree->lower_than(aux->parent->pair->key,aux->pair->key))
+        {
+          tree->current = aux;
+          return aux->pair;
+        }
       aux = aux->parent;}
-    if(aux== NULL) printf("HELLO");
+    return NULL;
   }
   tree->current = aux;
   return aux->pair;
