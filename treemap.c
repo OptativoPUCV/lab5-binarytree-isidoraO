@@ -163,25 +163,8 @@ Pair * upperBound(TreeMap * tree, void* key)
   TreeNode *aux = tree->root;
   if(aux == NULL || tree == NULL) return NULL;
   
-  TreeNode *aux_upper = aux;
-  while(aux != NULL)
-    {
-      if(is_equal(tree, key, aux->pair->key))
-        aux_upper = aux;
-      if(tree->lower_than(key, aux->pair->key))
-      {
-        aux_upper = aux;
-        aux = aux->left;  
-      }
-      else
-        aux = aux->right;
-    }
-  if(aux_upper != NULL)
-  {
-    tree->current = aux_upper;
-    return aux_upper->pair;
-  }
-  return NULL;
+  Pair *aux_upper =  searchTreeMap(tree, key);
+  return aux_upper;
 }
 
 Pair * firstTreeMap(TreeMap * tree) 
@@ -208,7 +191,6 @@ Pair * nextTreeMap(TreeMap * tree)
         aux = aux->parent;
         if(aux->left == temp_aux)
         {
-          printf("%i ", *(int*)aux->pair->key);
           tree->current = aux;
           return aux->pair;
         }
