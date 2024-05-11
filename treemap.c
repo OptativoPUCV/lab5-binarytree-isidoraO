@@ -216,6 +216,7 @@ Pair * nextTreeMap(TreeMap * tree)
           return tree->current->pair;
         }
       }
+    return NULL;
   }
   if(aux != NULL) 
     return aux->pair;
