@@ -213,7 +213,7 @@ Pair * nextTreeMap(TreeMap * tree)
         if(aux->left == temp_aux)
         {
           tree->current = aux;
-          break;
+          return tree->current->pair;
         }
       }
   }
